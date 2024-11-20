@@ -1,0 +1,48 @@
+﻿<Window x:Class="sansgranieicyganie.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:sansgranieicyganie"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <Slider x:Name="rozmiarTekstuSlider" 
+                Minimum="10"
+                Maximum="45"
+                Value="{Binding
+            ElementName=liczba2TextBox,
+            Path=Text
+            }">
+        </Slider>
+        <TextBlock
+            x:Name="napisTextBlock"
+            FontSize="{Binding
+            Path=Value, ElementName=rozmiarTekstuSlider
+            }"
+            
+            
+            >
+            Testujemy wiązanie danych
+            </TextBlock>
+        <TextBox x:Name="liczbaTextBox"
+                 Margin="24"
+                 Text="{Binding Path=Value, 
+            ElementName=rozmiarTekstuSlider
+            }">
+
+        </TextBox>
+        <TextBox x:Name="liczba2TextBox"
+                 Margin="30"
+                 Text="30"
+                 >
+            
+        </TextBox>
+        
+    </StackPanel>
+</Window>
+<!--
+   Binding służy do łączenia
+    Path to nazwa atrybutu
+    ElementName nazwa elementu z ktorego cos bierzemy
+-->    
